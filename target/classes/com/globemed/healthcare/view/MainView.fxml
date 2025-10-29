@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.globemed.healthcare.controller.MainController">
+    <top>
+        <HBox spacing="10" styleClass="dashboard-header">
+            <children>
+                <ImageView fitHeight="45.0" fitWidth="66.0" preserveRatio="true" styleClass="logo-image">
+                    <image>
+                        <javafx.scene.image.Image url="@../../../../logo/globemed_logo.png" />
+                    </image>
+                </ImageView>
+                <Label prefHeight="45.0" prefWidth="663.0" text="GlobeMed Dashboard" />
+            </children>
+        </HBox>
+    </top>
+    <left>
+        <VBox minWidth="220" styleClass="navigation-vbox">
+            <children>
+                <Label fx:id="welcomeLabel" text="Welcome, User!" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </Label>
+                 <Separator />
+                <Button fx:id="patientsButton" maxWidth="Infinity" onAction="#showPatientsView" styleClass="navigation-button" text="Patient Records">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-users" iconSize="18" />
+                    </graphic>
+                </Button>
+                <Button fx:id="appointmentsButton" maxWidth="Infinity" onAction="#showAppointmentsView" styleClass="navigation-button" text="Appointments">
+                     <graphic>
+                        <FontIcon iconLiteral="fas-calendar-check" iconSize="18" />
+                    </graphic>
+                </Button>
+                <Button fx:id="billingButton" maxWidth="Infinity" onAction="#showBillingView" styleClass="navigation-button" text="Billing &amp; Claims">
+                     <graphic>
+                        <FontIcon iconLiteral="fas-file-invoice-dollar" iconSize="18" />
+                    </graphic>
+                </Button>
+                <Button fx:id="reportsButton" maxWidth="Infinity" onAction="#showReportsView" styleClass="navigation-button" text="Medical Reports">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-chart-line" iconSize="18" />
+                    </graphic>
+                </Button>
+                <Button fx:id="staffButton" maxWidth="Infinity" onAction="#showStaffView" styleClass="navigation-button" text="Staff Registation">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-sitemap" iconSize="18" />
+                    </graphic>
+                </Button>
+                <VBox VBox.vgrow="ALWAYS" />
+                <Button fx:id="logoutButton" maxWidth="Infinity" onAction="#handleLogout" style="-fx-border-color: #ff0000;" styleClass="logout-button" text="Logout">
+                    <graphic>
+                        <FontIcon iconLiteral="fas-sign-out-alt" iconSize="18" />
+                    </graphic>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentPane" styleClass="content-pane">
+            <children>
+                <Label text="Welcome to the GlobeMed Healthcare Management System. Please select a module from the left." textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>

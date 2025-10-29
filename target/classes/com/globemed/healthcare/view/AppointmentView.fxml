@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="10" style="-fx-padding: 10;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.globemed.healthcare.controller.AppointmentController">
+	<children>
+		<HBox alignment="CENTER_LEFT" spacing="10">
+			<Label styleClass="login-title" text="Appointments Schedule">
+				<font><Font name="System Bold" size="18.0" /></font>
+			</Label>
+			<Region HBox.hgrow="ALWAYS" />
+			<Button fx:id="cancelButton" onAction="#handleCancelAppointment" styleClass="logout-button" text="Cancel Selected Appointment" />
+		</HBox>
+		<TableView fx:id="appointmentsTable" VBox.vgrow="ALWAYS">
+			<columns>
+				<TableColumn fx:id="appIdColumn" prefWidth="75.0" style="-fx-background-color: #17213c;" text="Appt. ID" />
+				<TableColumn fx:id="patientColumn" prefWidth="150.0" style="-fx-background-color: #17213c;" text="Patient" />
+				<TableColumn fx:id="doctorColumn" prefWidth="150.0" style="-fx-background-color: #17213c;" text="Doctor" />
+				<TableColumn fx:id="dateTimeColumn" prefWidth="175.0" style="-fx-background-color: #17213c;" text="Date &amp; Time" />
+				<TableColumn fx:id="statusColumn" prefWidth="100.0" style="-fx-background-color: #17213c;" text="Status" />
+				<TableColumn fx:id="reasonColumn" prefWidth="250.0" style="-fx-background-color: #17213c;" text="Reason" />
+			</columns>
+		</TableView>
+
+		<Separator />
+
+		<GridPane hgap="10" style="-fx-padding: 10;" vgap="10">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+            <RowConstraints />
+			</rowConstraints>
+			<children>
+				<Label text="Book New Appointment">
+					<font><Font name="System Bold" size="16.0" /></font>
+				</Label>
+
+				<Label text="Select Patient:" GridPane.rowIndex="1" />
+				<ComboBox fx:id="patientComboBox"   style="-fx-text-fill: white; -fx-prompt-text-fill: #cccccc;"
+                          prefWidth="250.0" promptText="Choose patient" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+				<Label text="Select Doctor:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+				<ComboBox fx:id="doctorComboBox"  style="-fx-background-color: #17213c; -fx-text-fill: white; -fx-prompt-text-fill: #cccccc;"
+                          prefWidth="250.0" promptText="Choose doctor" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+				<Label text="Select Date:" GridPane.rowIndex="2" />
+				<DatePicker fx:id="datePicker" promptText="Pick date" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+				<Label text="Select Time:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+				<ComboBox fx:id="timeComboBox" prefWidth="150.0" promptText="Pick time" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+				<Label text="Reason for Visit:" GridPane.rowIndex="3" />
+				<TextField fx:id="reasonField" promptText="e.g. Annual checkup" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+
+				<Button fx:id="bookButton" onAction="#handleBookAppointment" style="-fx-background-color: #17213c;" styleClass="navigation-button primary" text="Book Appointment" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+			</children>
+		</GridPane>
+	</children>
+</VBox>

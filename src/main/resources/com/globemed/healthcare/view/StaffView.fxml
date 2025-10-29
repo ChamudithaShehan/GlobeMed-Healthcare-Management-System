@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane style="-fx-padding: 10;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.globemed.healthcare.controller.StaffController">
+	<top>
+		<Label styleClass="login-title" text="Staff Hierarchy">
+			<font><Font name="System Bold" size="18.0" /></font>
+			<BorderPane.margin>
+				<Insets bottom="10.0" />
+			</BorderPane.margin>
+		</Label>
+	</top>
+	<center>
+		<HBox spacing="12">
+			<children>
+				<VBox spacing="10" styleClass="content-pane" VBox.vgrow="ALWAYS">
+					<children>
+						<Label style="-fx-font-weight: bold;" text="Organization" />
+						<TreeView fx:id="staffTreeView" style="-fx-control-inner-background: #17213c; -fx-text-fill: white;" VBox.vgrow="ALWAYS" />
+					</children>
+				</VBox>
+				<VBox spacing="10" styleClass="content-pane">
+					<children>
+						<Label style="-fx-font-weight: bold;" text="Details" />
+						<TextArea fx:id="detailsArea" editable="false" prefHeight="240" prefWidth="300" style="-fx-control-inner-background: #17213c; -fx-text-fill: white;" wrapText="true" />
+						<Label style="-fx-font-weight: bold;" text="Add Employee (Doctor only)" />
+						<HBox spacing="8">
+							<children>
+								<TextField fx:id="empUsernameField" promptText="Username" />
+								<PasswordField fx:id="empPasswordField" promptText="Password" />
+							</children>
+						</HBox>
+						<HBox spacing="8">
+							<children>
+								<ChoiceBox fx:id="empRoleChoice" prefHeight="38.0" prefWidth="179.0" style="-fx-background-color: #1f2937;" />
+								<Button fx:id="addEmployeeButton" onAction="#handleAddEmployee" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: #1f2937; -fx-border-color: #008000;" styleClass="navigation-button primary" text="Add" />
+							</children>
+						</HBox>
+					</children>
+				</VBox>
+			</children>
+		</HBox>
+	</center>
+</BorderPane>

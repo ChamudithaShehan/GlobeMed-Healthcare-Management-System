@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="14" styleClass="login-vbox" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.globemed.healthcare.controller.LoginController">
+    <children>
+        <ImageView fitHeight="120.0" preserveRatio="true" styleClass="logo-image">
+            <image>
+                <javafx.scene.image.Image url="@../../../../logo/globemed_logo.png" />
+            </image>
+        </ImageView>
+        <Label styleClass="login-title" text="GlobeMed Login" />
+        <TextField fx:id="usernameField" maxWidth="300" promptText="Username" />
+        <PasswordField fx:id="passwordField" maxWidth="300" promptText="Password" />
+        <Button fx:id="loginButton" onAction="#handleLogin" styleClass="login-button" text="Login" />
+        <Label fx:id="errorLabel" textFill="RED">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </Label>
+    </children>
+</VBox>
